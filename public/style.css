@@ -1,0 +1,33 @@
+.card-product {
+    background-color: #ffffff;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #e4e4e4;
+}
+
+span.price {
+    font-size: 14px;
+    text-align: center;
+}
+
+.product .card-title {
+    margin-bottom: 5px;
+}
+
+.product .button {
+    background-color: #2E7D32;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.product .stats {
+    margin-bottom: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.product .card-title {
+    color: #404549;
+}
