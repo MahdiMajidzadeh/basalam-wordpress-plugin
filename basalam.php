@@ -41,9 +41,8 @@ function bs_show_product($atts)
 
 	$link = 'http://basalam.ir/new/' . $item->vendor->identifier . '/product/' . $item->id;
 	$export = "
-    <div class='col-md-4 col-ms-6 product'>
-        <div class='card card-product'>
-            <div class='card-image'>
+    <div class='bs-product-container'>
+            <div class='image-box'>
                 <a href='{$link}'
                    title='{$item->name}'>
                     <img width='{$item->photo->width}'
@@ -51,14 +50,17 @@ function bs_show_product($atts)
                          src='{$item->photo->url}'
                          class='alignleft wp-post-image' alt=''>
                     <div class='ripple-container'></div>
+                </a>
             </div>
-            <div class='content'>
-
-                <div class='card-title'>
+            <div class='product-content'>
+                <div class='product-title'>
                     {$item->name}
                 </div>
+                <div class='product-brief'>
+                {$item->brief}
+                </div>
                 <div>
-                    <div class='price'>
+                    <div class='product-price'>
                          ".number_format($item->price)." ریال
                         </div>
                     <div class='stats'>
@@ -66,8 +68,6 @@ function bs_show_product($atts)
                     </div>
                 </div>
             </div>
-        </div>
-
     </div>";
 
 	return $export;
