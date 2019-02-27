@@ -3,14 +3,14 @@
 /**
  *
  * @link              https://mahdi.majidzadeh.ir/
- * @since             1.0.0
+ * @since             1.0.2
  * @package           Basalam
  *
  * @wordpress-plugin
- * Plugin Name:       Basalam
- * Plugin URI:        http://basalam.ir/
+ * Plugin Name:       Basalam Products
+ * Plugin URI:        https://basalam.com/
  * Description:       Show Basalam prodcuts and vendores in your posts
- * Version:           1.0.0
+ * Version:           1.0.2
  * Author:            Mahdi Majidzadeh
  * Author URI:        https://mahdi.majidzadeh.ir/
  * License:           GPL-2.0+
@@ -20,7 +20,7 @@
  */
 
 function basalam_enqueue_style() {
-	wp_enqueue_style( 'basalam-style', plugin_dir_url( __FILE__ ).'/public/style.css');
+	wp_enqueue_style( 'basalam-style', plugin_dir_url( __FILE__ ).'/public/style.css', [], '1.0.2');
 }
 add_action( 'wp_enqueue_scripts', 'basalam_enqueue_style' );
 
@@ -39,7 +39,7 @@ function bs_show_product($atts)
     );
 	$item = bs_query_get_product(['id' => $atts['id']]);
 
-	$link = 'http://basalam.ir/new/' . $item->vendor->identifier . '/product/' . $item->id;
+	$link = 'https://basalam.com/' . $item->vendor->identifier . '/product/' . $item->id;
 	$export = "
     <div class='bs-product-container'>
             <div class='image-box'>
@@ -64,7 +64,7 @@ function bs_show_product($atts)
                          ".number_format($item->price)." ریال
                         </div>
                     <div class='stats'>
-                        <a class='button' href='{$link}'>مشاهده و خرید</a>
+                        <a class='price-button' href='{$link}'>مشاهده و خرید</a>
                     </div>
                 </div>
             </div>
